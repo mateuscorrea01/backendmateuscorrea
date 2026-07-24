@@ -1,0 +1,35 @@
+### 1. Listar todos
+GET http://localhost:3000/jogadores
+
+###
+
+### 2. Buscar ID que não existe (Deve dar erro 404)
+GET http://localhost:3000/jogadores/99
+
+###
+
+### 3. Testar erros ao Criar (Enviar sem nome e com overall 200)
+POST http://localhost:3000/jogadores
+Content-Type: application/json
+
+{
+  "overall": 200,
+  "posicao": "MEI"
+}
+
+###
+
+### 4. Criar jogador correto (Deve dar 201)
+POST http://localhost:3000/jogadores
+Content-Type: application/json
+
+{
+  "nome": "Neymar Jr",
+  "overall": 89,
+  "posicao": "SA"
+}
+
+###
+
+### 5. Deletar ID que não existe (Deve dar erro 404)
+DELETE http://localhost:3000/jogadores/99
